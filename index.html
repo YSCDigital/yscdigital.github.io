@@ -101,7 +101,9 @@
 
     <div class="actions">
       <a class="btn btn-primary" onclick="openWhatsApp()">Konsultasi via WhatsApp</a>
-      <a class="btn btn-donate" href="https://www.paypal.me/ysuwaryo" target="_blank">Dukung Karya via PayPal</a>
+
+      <input id="donationAmount" type="number" min="1" placeholder="Masukkan nominal donasi (USD)" style="padding:15px;border-radius:14px;border:none;font-size:14px;outline:none;">
+      <button class="btn btn-donate" onclick="donateNow()">💛 Kirim Donasi via PayPal</button>
     </div>
 
     <div class="divider"></div>
@@ -117,6 +119,17 @@
       const text = encodeURIComponent('Halo YSC Digital, ingin konsultasi layanan.');
       window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     }
+
+    function donateNow() {
+      const amount = document.getElementById('donationAmount').value;
+      if (!amount || amount <= 0) {
+        alert('Masukkan nominal donasi yang valid 🙏');
+        return;
+      }
+      const paypalUrl = `https://www.paypal.me/ysuwaryo/${amount}`;
+      window.location.href = paypalUrl;
+    }
+
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
