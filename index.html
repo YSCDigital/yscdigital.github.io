@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YSC Digital — Premium Digital Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1f2933, #0b0f14 70%);
+      color: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border-radius: 24px;
+      padding: 40px 34px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+      backdrop-filter: blur(16px);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(0,224,255,.15);
+      color: #7de9ff;
+      font-size: 12px;
+      letter-spacing: .6px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-bottom: 28px;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .btn {
+      padding: 15px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00e0ff, #4facfe);
+      color: #021017;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,224,255,.35); }
+    .btn-donate {
+      background: linear-gradient(135deg, #ffc439, #ffb347);
+      color: #111;
+    }
+    .btn-donate:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,196,57,.35); }
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,.15), transparent);
+      margin: 28px 0 20px;
+    }
+    footer {
+      font-size: 12px;
+      text-align: center;
+      color: #94a3b8;
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 28px; }
+      .card { padding: 30px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge">PREMIUM DIGITAL STUDIO</div>
+    <h1>YSC Digital</h1>
+    <p>
+      Studio digital yang fokus pada website elegan, landing page konversi tinggi,
+      dan solusi online yang rapi, ringan, serta siap dipakai bisnis.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" onclick="openWhatsApp()">Konsultasi via WhatsApp</a>
+      <a class="btn btn-donate" href="https://www.paypal.me/ysuwaryo" target="_blank">Dukung Karya via PayPal</a>
+    </div>
+
+    <div class="divider"></div>
+
+    <footer>
+      © <span id="year"></span> YSC Digital · All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function openWhatsApp() {
+      const phone = '628xxxxxxxxxx'; // ganti nomor WA
+      const text = encodeURIComponent('Halo YSC Digital, ingin konsultasi layanan.');
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
